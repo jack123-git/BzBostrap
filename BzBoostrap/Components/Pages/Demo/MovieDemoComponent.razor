@@ -1,0 +1,37 @@
+﻿<div class="row">
+    <div class="col-5 col-md-3 text-end">Movie Id :</div>
+    <div class="col-7 col-md-9">@MovieId</div>
+</div>
+<div class="row">
+    <div class="col-5 col-md-3 text-end">Title :</div>
+    <div class="col-7 col-md-9">@movie.Title</div>
+</div>
+<div class="row">
+    <div class="col-5 col-md-3 text-end">Genre :</div>
+    <div class="col-7 col-md-9">@movie.Genre</div>
+</div>
+<div>
+    <p style="margin-bottom:100vh;">This is some placeholder content to show the scrolling behavior.</p>
+    <p>This content should appear at the bottom after you scroll.</p>
+</div>
+
+@code {
+    private Movie movie;
+
+    [Parameter]
+    public int MovieId { get; set; }
+
+    protected override void OnInitialized()
+    {
+        movie = new Movie() { MovieId = MovieId, Title = "Mortal Engines", Genre = "Sci-Fi" };
+        
+        base.OnInitialized();
+    }
+
+    private class Movie()
+    {
+        public int MovieId { get; set; }
+        public string Title { get; set; }
+        public string Genre { get; set; }
+    }
+}

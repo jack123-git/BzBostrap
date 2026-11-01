@@ -1,0 +1,129 @@
+﻿@page "/demo/dropdownpage"
+
+<h3>Dropdown Menu Demo</h3>
+
+<div class="d-flex gap-2 mb-4">
+    <Dropdown Color="DropdownColor.Primary" Disabled="true">
+        <DropdownToggleButton>Primary</DropdownToggleButton>
+        <DropdownMenu>
+            <DropdownItem To="#" Type="DropdownItemType.Link">Action</DropdownItem>
+            <DropdownItem To="#" Type="DropdownItemType.Link">Another action</DropdownItem>
+            <DropdownItem To="#" Type="DropdownItemType.Link">Something else here</DropdownItem>
+        </DropdownMenu>
+    </Dropdown>
+    <Dropdown Color="DropdownColor.Secondary">
+        <DropdownToggleButton>Secondary</DropdownToggleButton>
+        <DropdownMenu>
+            <!-- Disabled Item -->
+            <DropdownItem To="#" Type="DropdownItemType.Link" Disabled="true">Action</DropdownItem>
+            <!-- Active Item -->
+            <DropdownItem To="#" Type="DropdownItemType.Link" Active="true">Another action</DropdownItem>
+            <DropdownItem To="#" Type="DropdownItemType.Link">Something else here</DropdownItem>
+        </DropdownMenu>
+    </Dropdown>
+    <Dropdown Color="DropdownColor.Success">
+        <DropdownToggleButton>Success</DropdownToggleButton>
+        <DropdownMenu>
+            <DropdownItem To="#" Type="DropdownItemType.Link">Action</DropdownItem>
+            <DropdownItem To="#" Type="DropdownItemType.Link">Another action</DropdownItem>
+            <DropdownItem To="#" Type="DropdownItemType.Link">Something else here</DropdownItem>
+        </DropdownMenu>
+    </Dropdown>
+    <Dropdown Color="DropdownColor.Info">
+        <DropdownToggleButton>Info</DropdownToggleButton>
+        <DropdownMenu>
+            <DropdownItem To="#" Type="DropdownItemType.Link">Action</DropdownItem>
+            <DropdownItem To="#" Type="DropdownItemType.Link">Another action</DropdownItem>
+            <DropdownItem To="#" Type="DropdownItemType.Link">Something else here</DropdownItem>
+        </DropdownMenu>
+    </Dropdown>
+    <Dropdown Color="DropdownColor.Warning">
+        <DropdownToggleButton>Warning</DropdownToggleButton>
+        <DropdownMenu>
+            <DropdownItem To="#" Type="DropdownItemType.Link">Action</DropdownItem>
+            <DropdownItem To="#" Type="DropdownItemType.Link">Another action</DropdownItem>
+            <DropdownItem To="#" Type="DropdownItemType.Link">Something else here</DropdownItem>
+        </DropdownMenu>
+    </Dropdown>
+    <Dropdown Color="DropdownColor.Danger">
+        <DropdownToggleButton>Danger</DropdownToggleButton>
+        <DropdownMenu>
+            <DropdownItem To="#" Type="DropdownItemType.Link">Action</DropdownItem>
+            <DropdownItem To="#" Type="DropdownItemType.Link">Another action</DropdownItem>
+            <DropdownItem To="#" Type="DropdownItemType.Link">Something else here</DropdownItem>
+        </DropdownMenu>
+    </Dropdown>
+</div>
+
+<hr />
+<h4>Direction</h4>
+<div class="d-flex gap-2 mb-4">    
+    <Dropdown Color="DropdownColor.Primary" Direction="DropdownDirection.Dropend">
+        <DropdownToggleButton>Primary - Drop End</DropdownToggleButton>
+        <DropdownMenu>
+            <DropdownItem To="#" Type="DropdownItemType.Link">Action</DropdownItem>
+            <DropdownItem To="#" Type="DropdownItemType.Link">Another action</DropdownItem>
+            <DropdownItem To="#" Type="DropdownItemType.Link">Something else here</DropdownItem>
+        </DropdownMenu>
+    </Dropdown>
+    <Dropdown Color="DropdownColor.Secondary" Direction="DropdownDirection.DropupCentered">
+        <DropdownToggleButton>Secondary - Dropup Centered</DropdownToggleButton>
+        <DropdownMenu>
+            <DropdownItem To="#" Type="DropdownItemType.Link">Action</DropdownItem>
+            <DropdownItem To="#" Type="DropdownItemType.Link">Another action</DropdownItem>
+            <DropdownItem To="#" Type="DropdownItemType.Link">Something else here</DropdownItem>
+        </DropdownMenu>
+    </Dropdown>
+    <Dropdown Color="DropdownColor.Success" Direction="DropdownDirection.DropdownCentered">
+        <DropdownToggleButton>Success - Dropdown Centered</DropdownToggleButton>
+        <DropdownMenu>
+            <DropdownItem To="#" Type="DropdownItemType.Link">Action</DropdownItem>
+            <DropdownItem To="#" Type="DropdownItemType.Link">Another action</DropdownItem>
+            <DropdownItem To="#" Type="DropdownItemType.Link">Something else here</DropdownItem>
+        </DropdownMenu>
+    </Dropdown>
+    <Dropdown Color="DropdownColor.Info" Direction="DropdownDirection.Dropup">
+        <DropdownToggleButton>Info - DropUp</DropdownToggleButton>
+        <DropdownMenu>
+            <DropdownItem To="#" Type="DropdownItemType.Link">Action</DropdownItem>
+            <DropdownItem To="#" Type="DropdownItemType.Link">Another action</DropdownItem>
+            <DropdownItem To="#" Type="DropdownItemType.Link">Something else here</DropdownItem>
+        </DropdownMenu>
+    </Dropdown>
+    <Dropdown Color="DropdownColor.Warning" Direction="DropdownDirection.Dropstart">
+        <DropdownToggleButton>Warning - Drop Start</DropdownToggleButton>
+        <DropdownMenu>
+            <DropdownItem To="#" Type="DropdownItemType.Link">Action</DropdownItem>
+            <DropdownItem To="#" Type="DropdownItemType.Link">Another action</DropdownItem>
+            <DropdownItem To="#" Type="DropdownItemType.Link">Something else here</DropdownItem>
+        </DropdownMenu>
+    </Dropdown>
+    <Dropdown Color="DropdownColor.Danger">
+        <DropdownToggleButton>Danger</DropdownToggleButton>
+        <DropdownMenu>
+            <DropdownItem To="#" Type="DropdownItemType.Link">Action</DropdownItem>
+            <DropdownItem To="#" Type="DropdownItemType.Link">Another action</DropdownItem>
+            <DropdownItem To="#" Type="DropdownItemType.Link">Something else here</DropdownItem>
+        </DropdownMenu>
+    </Dropdown>
+</div>
+
+<hr />
+<h4>Dropdown Header / Divider </h4>
+<div>
+   <Dropdown Color="DropdownColor.Danger">
+        <DropdownToggleButton>Danger</DropdownToggleButton>
+        <DropdownMenu Position="DropdownMenuPosition.End">
+            <DropdownHeader><Strong>HEADER</Strong></DropdownHeader>
+            <DropdownItem To="#" Type="DropdownItemType.Link">Action</DropdownItem>
+            <DropdownItem To="#" Type="DropdownItemType.Link">Another action</DropdownItem>
+            <DropdownDivider />
+            <DropdownItem To="#" Type="DropdownItemType.Link">Something else here</DropdownItem>
+        </DropdownMenu>
+    </Dropdown>
+</div>
+
+
+@code {
+    //https://www.youtube.com/watch?v=mhcLiskKQmQ
+}

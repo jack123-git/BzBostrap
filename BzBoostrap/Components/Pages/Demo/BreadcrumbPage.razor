@@ -1,0 +1,23 @@
+﻿@page "/demo/breadcrumbpage"
+
+<h3>BreadcrumbPage</h3>
+
+<div>
+    <Breadcrumb Items="NavItems1" />
+    <Breadcrumb style="--bs-breadcrumb-divider: '>';" Items="NavItems1" /> <!--自訂分隔符號 > -->
+</div>
+
+@code {
+    private List<BreadcrumbItem> NavItems1 { get; set; }
+
+    protected override void OnInitialized()
+    {
+        NavItems1 = new List<BreadcrumbItem>
+        {
+            new BreadcrumbItem { Text = "Home", Href = "/" },
+            new BreadcrumbItem { Text = "Docs", Href = "/docs" },
+            new BreadcrumbItem { Text = "Videos", IsCurrentPage = true }
+        };
+    }
+
+}

@@ -1,0 +1,24 @@
+﻿@page "/demo/collapselpage"
+
+<h3>CollapselPage</h3>
+
+<Button Type="ButtonType.Button" Color="ButtonColor.Primary" @onclick="ShowContentAsync">Show COntent</Button>
+<Button Type="ButtonType.Button" Color="ButtonColor.Primary" @onclick="HideContentAsync">Hide COntent</Button>
+<Button Type="ButtonType.Button" Color="ButtonColor.Primary" @onclick="ToggleContentAsync">Toggle COntent</Button>
+
+<Collapse @ref="collapsel">
+    <Card>
+        <CardBody>
+            Some placeholder conetent for the collapse component. This pandl is hidden by default but revealed when the user
+        </CardBody>
+    </Card>
+</Collapse>
+
+@code {
+    Collapse collapsel = default!;
+
+    private async Task ShowContentAsync() => await collapsel.ShowAsync();
+    private async Task HideContentAsync() => await collapsel.HideAsync();
+    private async Task ToggleContentAsync() => await collapsel.ToggleAsync();
+    
+}

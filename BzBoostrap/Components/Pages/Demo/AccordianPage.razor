@@ -1,25 +1,25 @@
-﻿@page "/demo/accordian"
+﻿@page "/demo/accordianpage"
 @rendermode InteractiveServer
 
 <h3>AccordianPage</h3>
 
  @* AlwaysOpen="true" 讓各區塊顯示獨立，不受其他區塊影響 *@
  @* AlwaysOpen="false" 一次只會顯示一個區塊，展開一個區塊，原本展開區塊會關閉 *@
-<Accordion AlwaysOpen="true">
-    <AccordionItem Title="Accordion Item #1">
+<Accordion AlwaysOpen="true" OnShowing="OnShowingAsync" OnShown="OnShownAsync" OnHiding="OnHidingAsync" OnHidden="OnHiddenAsync">
+    <AccordionItem Title="Accordion Item #1" Name="Item1">
         <Content>
             <b>This is the first item's accordion body.</b>
             It is shown by default, until the collapse plugin add the app
         </Content>
     </AccordionItem>
-    <AccordionItem Title="Accordion Item #2">
+    <AccordionItem Title="Accordion Item #2" Name="Item2">
         <Content>
             <b>This is the third item's accordion body.</b>
             It is shown by default, until the collapse plugin add the app
         </Content>
     </AccordionItem>
     @* Title 加 Icon *@
-    <AccordionItem>
+    <AccordionItem Name="Item3">
         <TitleTemplate>
             <Icon Name="IconName.HouseFill" />Accordion Item #3
         </TitleTemplate>
@@ -30,20 +30,49 @@
     </AccordionItem>
 
     @* Active="true" 該區塊一開始就會展開 *@
-    <AccordionItem Active="true" Title="Accordion Item #4">
+    <AccordionItem Active="true" Title="Accordion Item #4" Name="Item4">
         <Content>
             <b>This is the second item's accordion body.</b>
             It is shown by default, until the collapse plugin add the app
         </Content>
     </AccordionItem>
-    <AccordionItem Title="Accordion Item #5">
+    <AccordionItem Title="Accordion Item #5" Name="Item5">
         <Content>
             <b>This is the third item's accordion body.</b>
             It is shown by default, until the collapse plugin add the app
         </Content>
     </AccordionItem>
 </Accordion>
+<hr
+<div>
+    <ul>
+        @foreach (var eventItem in events)
+        {
+            <li>@eventItem</li>
+        }
+    </ul>
+</div>
 
 @code {
+    private List<string> events = new List<string>();
 
+    private void OnShowingAsync(AccordionEventArgs args)
+    {
+        events.Add($"Showing: {args.Name}");
+    }
+
+    private void OnShownAsync(AccordionEventArgs args)
+    {
+        events.Add($"Shown: {args.Name}");
+    }
+
+    private void OnHidingAsync(AccordionEventArgs args)
+    {
+        events.Add($"Hiding: {args.Name}");
+    }
+
+    private void OnHiddenAsync(AccordionEventArgs args)
+    {
+        events.Add($"Hidden: {args.Name}");
+    }
 }

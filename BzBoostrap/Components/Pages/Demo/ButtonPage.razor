@@ -1,0 +1,105 @@
+﻿@page "/demo/buttonpage"
+
+<h3>ButtonPage</h3>
+
+<div class="mb-3">顏色
+    <Button Color="ButtonColor.Primary">Primary</Button>
+    <Button Color="ButtonColor.Secondary">Secondary</Button>
+    <Button Color="ButtonColor.Success">Success</Button>
+    <Button Color="ButtonColor.Danger">Danger</Button>
+    <Button Color="ButtonColor.Warning">Warning</Button>
+    <Button Color="ButtonColor.Info">Info</Button>
+    <Button Color="ButtonColor.Light">Light</Button>
+    <Button Color="ButtonColor.Dark">Dark</Button>
+</div>
+
+<hr />
+<div class="mb-3">
+    <Button Type="ButtonType.Link" Color="ButtonColor.Primary" To="\">Link</Button>
+    <Button Type="ButtonType.Submit" Color="ButtonColor.Secondary" To="#"> Button</Button>
+</div>
+
+<hr />
+<div class="mb-3">大小
+    <Button Color="ButtonColor.Primary" Outline="true" Size="ButtonSize.Large">Large Button</Button>
+    <Button Color="ButtonColor.Primary" Outline="true" Size="ButtonSize.Medium">Medium Button</Button>
+    <Button Color="ButtonColor.Primary" Outline="true" Size="ButtonSize.Small">Small Button</Button>
+</div>
+
+<hr />
+<div>
+    <Button Color="ButtonColor.Primary" Disabled> Disabled</Button>
+</div>
+
+<hr />
+<div class="mb-3">Tooltip
+    <Button Color="ButtonColor.Primary" TooltipTitle="Top" TooltipPlacement="TooltipPlacement.Top" > Tooltip Top</Button>
+    <Button Color="ButtonColor.Primary" TooltipTitle="Bottom" TooltipPlacement="TooltipPlacement.Bottom" > Tooltip Bottom</Button>
+    <Button Color="ButtonColor.Primary" TooltipTitle="Left" TooltipPlacement="TooltipPlacement.Left" > Tooltip Left</Button>
+    <Button Color="ButtonColor.Primary" TooltipTitle="Right" TooltipPlacement="TooltipPlacement.Right" > Tooltip Right</Button>
+
+    <Button Color="ButtonColor.Primary" TooltipTitle="Color Chagne" TooltipColor="TooltipColor.Danger"> Danger Tooltip</Button>
+</div>
+
+<hr />
+<div>按鈕執行效果
+    <Button Color="ButtonColor.Primary" Loading="true" />
+    <Button Color="ButtonColor.Primary" Loading="true" LoadingText="Saving..." />
+    <Button Color="ButtonColor.Primary" Loading="true">
+        <LoadingTemplate>
+            <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+            Loading...
+        </LoadingTemplate>
+    </Button>
+</div>
+
+<hr />
+<div>
+    <Button @ref="buttonSave" Color="ButtonColor.Primary" @onclick="async() => await OnSaveClick()">Save</Button>
+</div>
+
+<hr />
+<div>事件
+    <Button Color="ButtonColor.Primary" @onclick="OnClick">Click Event</Button>
+    <Button Color="ButtonColor.Primary" @ondblclick="OnDoubleClick">Double Click Event</Button>
+    <Button Color="ButtonColor.Primary" @onclick="((args) => OnClickWithArgs(args, argValue))">Click Args</Button>
+</div>
+
+<div class="mt-3">
+    <br />
+    <p>Event：@eventMessage</p>
+</div>
+
+@code {
+    private Button buttonSave;
+
+    private string eventMessage = string.Empty;
+    private string argValue = "Test argument value";
+
+    private async Task OnSaveClick()
+    {
+        buttonSave?.ShowLoading("Saving details...");
+
+        await Task.Delay(3000);
+
+        buttonSave?.HideLoading();
+    }
+
+    private void OnClick()
+    {
+        eventMessage = "Button Clicked!";
+        StateHasChanged();
+    }
+    
+    private void OnDoubleClick()
+    {
+        eventMessage = "Button Double Clicked!";
+        StateHasChanged();
+    }
+    
+    private void OnClickWithArgs(MouseEventArgs args, string argValue)
+    {
+        eventMessage = $"Button Clicked with Args: {argValue}";
+        StateHasChanged();
+    }
+}

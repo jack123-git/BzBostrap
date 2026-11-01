@@ -1,0 +1,52 @@
+﻿@page "/demo/badgepage"
+
+<h3>BadgePage</h3>
+
+<Badge Color="BadgeColor.Primary" BadgeIndicatorType="BadgeIndicatorType.RoundedPill">Primary</Badge>
+<Badge Color="BadgeColor.Secondary" BadgeIndicatorType="BadgeIndicatorType.RoundedPill">Secondary</Badge>
+<Badge Color="BadgeColor.Success" BadgeIndicatorType="BadgeIndicatorType.RoundedPill">Success</Badge>
+<Badge Color="BadgeColor.Danger" BadgeIndicatorType="BadgeIndicatorType.RoundedPill">Danger</Badge>
+<Badge Color="BadgeColor.Warning" BadgeIndicatorType="BadgeIndicatorType.RoundedPill">Warning</Badge>
+<Badge Color="BadgeColor.Info" BadgeIndicatorType="BadgeIndicatorType.RoundedPill">Info</Badge>
+<Badge Color="BadgeColor.Light" BadgeIndicatorType="BadgeIndicatorType.RoundedPill">Light</Badge>
+<Badge Color="BadgeColor.Dark" BadgeIndicatorType="BadgeIndicatorType.RoundedPill">Dark</Badge>
+
+<hr />
+<div>
+    Messages <Badge Color="BadgeColor.Primary" BadgeIndicatorType="BadgeIndicatorType.RoundedPill">4</Badge>
+</div>
+
+<hr />
+<div class="mb-3">
+    <Button Type="ButtonType.Button" Color="ButtonColor.Primary">
+        Ammouncement <Badge Color="BadgeColor.Danger"><Icon Name="IconName.MegaphoneFill" />2</Badge>
+    </Button>
+    <Button Type="ButtonType.Button" Color="ButtonColor.Primary">
+        Messages <Badge>4</Badge>
+    </Button>
+</div>
+
+<hr />
+<!--可以使用 父元件Position 跟 子元件Placement設定 Badge相對位置-->
+<div class="mb-3">
+    <Button Type="ButtonType.Button" Color="ButtonColor.Primary" Position="Position.Relative">
+        Inbox 
+        <Badge Color="BadgeColor.Danger"
+            Posistion="Position.Absolute"
+            Placement="BadgePlacement.TopLeft"
+            IndicatorType="BadgeIndicatorType.RoundedPill"
+            VisuallyHiddenText="unread message">99+</Badge>
+    </Button>
+    <Button Type="ButtonType.Button" Color="ButtonColor.Primary" Position="Position.Relative">
+        Inbox 
+        <Badge Color="BadgeColor.Danger"
+            Posistion="Position.Absolute"
+            Placement="BadgePlacement.TopCenter"
+            IndicatorType="BadgeIndicatorType.RoundedPill"
+            VisuallyHiddenText="unread message">99+</Badge>
+    </Button>
+</div>
+
+@code {
+
+}

@@ -1,0 +1,22 @@
+﻿@page "/demo/calloutpage"
+
+<h3>CalloutPage</h3>
+Callout 是一個用於顯示重要訊息的元件，通常用於提示、警告或其他需要引起注意的內容。它可以包含標題、內容和按鈕，並且可以自訂樣式以符合不同的需求。
+預設為灰色
+
+<Callout>這是一個預設的提示訊息。</Callout>
+
+<Callout Heading="標題" HideHeading="true">這是一個隱藏標題的提示訊息。</Callout>
+
+<Callout Heading="標題+訊息">這是一個標題的提示訊息。</Callout>
+
+<Callout Color="CalloutColor.Danger">這是一個顏色為Danger提示訊息。目前只有Default、Danger、Warning、Info、Success種顏色</Callout>
+<Callout Color="CalloutColor.Warning">這是一個顏色為Warning提示訊息。</Callout>
+<Callout Color="CalloutColor.Info">這是一個顏色為Info提示訊息。</Callout>
+<Callout Color="CalloutColor.Success">這是一個顏色為Success提示訊息。</Callout>
+
+
+
+@code {
+
+}

@@ -1,0 +1,41 @@
+﻿@page "/demo/alertpage"
+
+<h3>AlertPage</h3>
+
+<div>
+    <!-- Alert 元件，Color 屬性可設定不同的顏色，Dismissible 屬性可設定是否可關閉 -->
+    <!-- 顯示外觀
+    <Alert Color="AlertColor.Primary" Dismissable="true"><Icon Name="IconName.InfoCircleFill" /> Sample of Primary Alert</Alert>
+    <Alert Color="AlertColor.Secondary" Dismissable="true"><Icon Name="IconName.InfoCircleFill" /> Sample of Secondary Alert</Alert>
+    <Alert Color="AlertColor.Success" Dismissable="true"><Icon Name="IconName.CheckCircleFill" /> Sample of Success Alert</Alert>
+    <Alert Color="AlertColor.Danger" Dismissable="true"><Icon Name="IconName.ExclamationTriangleFill" /> Sample of Danger Alert</Alert>
+    <Alert Color="AlertColor.Warning" Dismissable="true"><Icon Name="IconName.ExclamationTriangleFill" /> Sample of Warning Alert</Alert>
+    <Alert Color="AlertColor.Info" Dismissable="true"><Icon Name="IconName.InfoCircleFill" /> Sample of Info Alert</Alert>
+    <Alert Color="AlertColor.Light" Dismissable="true"><Icon Name="IconName.InfoCircleFill" /> Sample of Light Alert</Alert>
+    <Alert Color="AlertColor.Dark" Dismissable="true"><Icon Name="IconName.InfoCircleFill" /> Sample of Dark Alert</Alert>
+    -->
+</div>    
+    <!--Alert範例-->
+@if (showAlert)
+{ 
+<div>
+    <Alert @ref="primaryAlert" Color="AlertColor.Primary" Dismissable="true" onClosed="AlertClosed">
+        <Icon Name="IconName.InfoCircleFill" class="me-2" />
+        Sample of Primary Alert
+        <Button Color="ButtonColor.Primary" @onclick="CloseAlert">Close</Button>
+    </Alert>
+</div>
+}
+    <Button Color="ButtonColor.Primary" @onclick="ShowAlert">Alert</Button>
+
+
+@code {
+    Alert primaryAlert;
+    private bool showAlert = false;
+
+    private async Task CloseAlert() => await primaryAlert?.CloseAsync(); 
+
+    private void AlertClosed() => showAlert = false;
+    
+    private async Task ShowAlert() => showAlert = true;
+}
